@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <p>Manage Hospital Operations Easily</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#patients">Patients</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointments">Appointments</a>
+        <a href="#billing">Billing</a>
+    </nav>
+
+    <main id="home">
+        <h2>Welcome to Hospital Dashboard</h2>
+        <p class="subtitle">Live hospital operations overview</p>
+
+        <section class="summary-grid">
+            <div class="summary-card">
+                <span>Total Patients</span>
+                <strong id="totalPatients">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Total Doctors</span>
+                <strong id="totalDoctors">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Total Appointments</span>
+                <strong id="totalAppointments">0</strong>
+            </div>
+            <div class="summary-card">
+                <span>Total Bills</span>
+                <strong id="totalBilling">0</strong>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card" id="patients">
+                <h3>Patient Management</h3>
+                <p>Register and manage patient details.</p>
+                <button type="button" class="module-btn" data-module="patients">Open Patients</button>
+
+                <form id="patientForm" class="module-form">
+                    <input type="text" name="name" placeholder="Patient name" required>
+                    <input type="number" name="age" placeholder="Age" required>
+                    <input type="text" name="gender" placeholder="Gender" required>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="address" placeholder="Address" required>
+                    <textarea name="medicalHistory" placeholder="Medical history"></textarea>
+                    <button type="submit">Add Patient</button>
+                </form>
+                <div id="patientsList" class="data-list"></div>
+            </div>
+
+            <div class="card" id="doctors">
+                <h3>Doctor Management</h3>
+                <p>Manage doctor details and specialties.</p>
+                <button type="button" class="module-btn" data-module="doctors">Open Doctors</button>
+
+                <form id="doctorForm" class="module-form">
+                    <input type="text" name="name" placeholder="Doctor name" required>
+                    <input type="text" name="specialty" placeholder="Specialty" required>
+                    <input type="text" name="department" placeholder="Department" required>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">Add Doctor</button>
+                </form>
+                <div id="doctorsList" class="data-list"></div>
+            </div>
+
+            <div class="card" id="appointments">
+                <h3>Appointments</h3>
+                <p>Schedule patient appointments.</p>
+                <button type="button" class="module-btn" data-module="appointments">Open Appointments</button>
+
+                <form id="appointmentForm" class="module-form">
+                    <input type="number" name="patientId" placeholder="Patient ID" required>
+                    <input type="number" name="doctorId" placeholder="Doctor ID" required>
+                    <input type="date" name="appointmentDate" required>
+                    <input type="text" name="timeSlot" placeholder="Time slot e.g. 09:30 AM" required>
+                    <input type="text" name="status" placeholder="Status" value="Scheduled">
+                    <button type="submit">Add Appointment</button>
+                </form>
+                <div id="appointmentsList" class="data-list"></div>
+            </div>
+
+            <div class="card" id="billing">
+                <h3>Billing Management</h3>
+                <p>Manage hospital bills and payments.</p>
+                <button type="button" class="module-btn" data-module="billing">Open Billing</button>
+
+                <form id="billingForm" class="module-form">
+                    <input type="number" name="patientId" placeholder="Patient ID" required>
+                    <input type="number" step="0.01" name="amount" placeholder="Amount" required>
+                    <input type="text" name="billingType" placeholder="Billing type" required>
+                    <input type="date" name="billingDate" required>
+                    <input type="text" name="status" placeholder="Status" value="Pending">
+                    <button type="submit">Add Bill</button>
+                </form>
+                <div id="billingList" class="data-list"></div>
+            </div>
+        </section>
+
+        <p id="message"></p>
+    </main>
+
+    <footer>
+        <p>Hospital Management System | TT Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
